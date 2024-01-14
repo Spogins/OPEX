@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pep-opex"
+version = "0.1.0"
+description = ""
+authors = ["spogins <spogins@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2"
+wagtail = "^5.2.2"
+django-environ = "^0.11.2"
+psycopg2-binary = "^2.9.9"
+django-vite = "^3.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
