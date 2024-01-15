@@ -17,9 +17,9 @@ import environ
 
 env = environ.Env()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+PROJECT_DIR = BASE_DIR / "src"
 
 # Read env file
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=True)
@@ -49,6 +49,9 @@ DJANGO_APPS = [
 ]
 
 WAGTAIL_APPS = [
+    "wagtail_modeltranslation",
+    "wagtail_modeltranslation.makemigrations",
+    "wagtail_modeltranslation.migrate",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -64,6 +67,7 @@ WAGTAIL_APPS = [
 
 LOCAL_APPS = [
     "src.base",
+    "src.test_app",
 ]
 
 THIRD_PARTY_APPS = [
@@ -74,10 +78,10 @@ THIRD_PARTY_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + WAGTAIL_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -142,7 +146,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "uk"
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ("uk", "Ukrainian"),
+    ("en", "English"),
+    ("ru", "Russian"),
+]
+WAGTAILMODELTRANSLATION_LOCALE_PICKER = True
 
 TIME_ZONE = "UTC"
 
@@ -159,12 +169,11 @@ DJANGO_VITE_DEV_SERVER_HOST = "localhost"
 DJANGO_VITE_DEV_SERVER_PORT = 3000
 DJANGO_VITE_MANIFEST_PATH = DJANGO_VITE_ASSETS_PATH / "nodejs/manifest.json"
 
-
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
-STATICFILES_DIRS = [BASE_DIR / STATIC_URL, DJANGO_VITE_ASSETS_PATH]
+STATICFILES_DIRS = [BASE_DIR / "components", BASE_DIR / "static", DJANGO_VITE_ASSETS_PATH]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "collect_static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type

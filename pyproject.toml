@@ -12,6 +12,7 @@ wagtail = "^5.2.2"
 django-environ = "^0.11.2"
 psycopg2-binary = "^2.9.9"
 django-vite = "^3.0.2"
+wagtail-modeltranslation = "^0.14.1"
 
 
 [build-system]
