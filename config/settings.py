@@ -37,14 +37,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # wagtail set-up
+]
+
+WAGTAIL_APPS = [
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -56,11 +58,20 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail',
+]
+
+LOCAL_APPS = [
     "src.base",
+]
+
+THIRD_PARTY_APPS = [
     'modelcluster',
     'taggit',
     'django_vite',
 ]
+
+INSTALLED_APPS = DJANGO_APPS + WAGTAIL_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
