@@ -1,0 +1,95 @@
+# View pre-commit hooks at https://github.com/pre-commit/pre-commit-hooks#hooks-available
+# !!!RUN pre-commit autoupdate!!! To get the latest versions. This gist has been collecting dust bunnies and cob webs.
+# The commented repos/hooks will NOT autoupdate! If you're going to use them, uncomment and run pre-commit autoupdate.
+
+default_stages: [commit, push]
+
+fail_fast: false
+
+minimum_pre_commit_version: '1.15.0'
+repos:
+  # iSort https://pycqa.github.io/isort/
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args:
+          - --trailing-comma
+          - --use-parentheses
+          - --balanced
+          - --py=38
+          - --profile=black
+          - -l=120
+        exclude: ^(migrations/|wagtailtinymce/|wagtailvideos/)
+
+
+  # Black https://black.readthedocs.io/en/stable/
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        args:
+          - --target-version=py311
+          - --line-length=120
+        exclude: ^(migrations/|wagtailtinymce/|wagtailvideos/)
+
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: fix-encoding-pragma
+      - id: forbid-new-submodules
+      - id: pretty-format-json
+        args:
+          - --autofix
+          - --indent=4
+          - --no-ensure-ascii
+          - --no-sort-keys
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+        args: [ --markdown-linebreak-ext=md ]  # Preserve Markdown hard linebreaks
+
+
+  - repo: https://github.com/pycqa/flake8
+    rev: '6.0.0'
+    hooks:
+      - id: flake8
+#        additional_dependencies: [
+#          'flake8-docstrings==1.6.0',
+#        ]
+        args:
+          - --max-line-length=120
+          - --ignore=I001,I002,I003,I004,I005,D200,D106,E203,W503,D100,D105,D107,D104
+          - --exclude=.venv,venv,tests/*,./*/migrations/*,.git,*migrations*, manage.py, app.py, translation.py, */wagtailtinymce, ^wagtailvideos/
+        exclude: ^(migrations/|wagtailtinymce/|wagtailvideos/)
+
+      # Add trailing commas https://github.com/asottile/add-trailing-comma
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.4.0
+    hooks:
+    -   id: add-trailing-comma
+        exclude: ^(migrations/|wagtailtinymce/|wagtailvideos/)
+
+
+
+  # Removes unused variables and imports https://github.com/myint/autoflake
+  - repo: https://github.com/myint/autoflake
+    rev: v1.4
+    hooks:
+      - id: autoflake
+        args:
+          - --in-place
+          - --remove-unused-variables
+          - --remove-all-unused-imports
+        exclude: ^(migrations/|wagtailtinymce/|wagtailvideos/)
