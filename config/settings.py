@@ -68,6 +68,8 @@ WAGTAIL_APPS = [
 LOCAL_APPS = [
     "src.base",
     "src.test_app",
+    "src.tinymce_editor",
+    "src.wagtailvideos",
 ]
 
 THIRD_PARTY_APPS = [
@@ -176,6 +178,11 @@ STATICFILES_DIRS = [BASE_DIR / "components", BASE_DIR / "static", DJANGO_VITE_AS
 STATIC_ROOT = os.path.join(BASE_DIR, "collect_static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+WAGTAILADMIN_RICH_TEXT_EDITORS = {
+    "default": {
+        "WIDGET": "src.tinymce_editor.widget.TinyMCERichTextArea",
+    },
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 #

@@ -26,6 +26,17 @@ files = [
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "bcp47"
+version = "0.0.4"
+description = "Language tags made easy"
+optional = false
+python-versions = "*"
+files = [
+    {file = "bcp47-0.0.4-py3-none-any.whl", hash = "sha256:309d3bbaef8d6c9ac59d37ba2167cc6620b4e7467ec8f1e09641b659bb1c0c6d"},
+    {file = "bcp47-0.0.4.tar.gz", hash = "sha256:4878d2f3e697ef39ef3891a147280705e4377d5a8d7eb0702129b8d4a3718702"},
+]
+
+[[package]]
 name = "beautifulsoup4"
 version = "4.11.2"
 description = "Screen-scraping library"
@@ -183,6 +194,19 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-enumchoicefield"
+version = "3.0.1"
+description = "A choice field for Django using native Python Enums"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-enumchoicefield-3.0.1.tar.gz", hash = "sha256:812a19fcf750918961e907b27a5fac597eced52d0a123b88128a53a494929ea7"},
+]
+
+[package.dependencies]
+Django = ">=2.0"
 
 [[package]]
 name = "django-environ"
@@ -828,6 +852,26 @@ django-modeltranslation = ">=0.17"
 wagtail = ">=4.0,<=6.0"
 
 [[package]]
+name = "wagtailvideos"
+version = "5.2.1"
+description = "A wagtail module for uploading and displaying videos in various codecs."
+optional = false
+python-versions = "*"
+files = [
+    {file = "wagtailvideos-5.2.1-py2.py3-none-any.whl", hash = "sha256:9ec62a35bbeb47547ca5a4614f8cd212a8bab9bbc36c934aa9dcad55bca53483"},
+    {file = "wagtailvideos-5.2.1.tar.gz", hash = "sha256:3575624307184593a99bb29df803636d80a9c2806cf879df988482ebbc640e92"},
+]
+
+[package.dependencies]
+bcp47 = "0.0.4"
+Django = ">=3.2"
+django-enumchoicefield = ">=1.1.0"
+wagtail = ">=5.2"
+
+[package.extras]
+testing = ["mock (==2.0.0)"]
+
+[[package]]
 name = "webencodings"
 version = "0.5.1"
 description = "Character encoding aliases for legacy web content"
@@ -865,4 +909,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "9f22669d47bc2917098be38eb3ab70b0397eb52f5caa4dc9332f59050ed35c2f"
+content-hash = "8c2813bfce7c9f28ed2aff8e36346685e70eba9ac39f82a4a75cc75c38e4c231"
