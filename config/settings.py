@@ -62,6 +62,7 @@ WAGTAIL_APPS = [
     "wagtail.images",
     "wagtail.search",
     "wagtail.admin",
+    "wagtail.contrib.settings",
     "wagtail",
 ]
 
@@ -69,6 +70,8 @@ LOCAL_APPS = [
     "src.base",
     "src.tinymce_editor",
     "src.wagtailvideos",
+    "src.payment_page",
+    "src.contact_settings",
 ]
 
 THIRD_PARTY_APPS = [
@@ -97,14 +100,31 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
+        "DIRS": [
+            "templates",
+            "src/../templates",
+            "components",
+        ],
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "wagtail.contrib.settings.context_processors.settings",
+            ],
+            "loaders": [
+                (
+                    "django.template.loaders.cached.Loader",
+                    [
+                        "django.template.loaders.filesystem.Loader",
+                        "django.template.loaders.app_directories.Loader",
+                        # 'django_components.template_loader.Loader',
+                    ],
+                ),
+            ],
+            "builtins": [
+                # 'django_components.templatetags.component_tags',
             ],
         },
     },

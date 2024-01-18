@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 class ContactSettingsConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "contact_settings"
+    name = "src.contact_settings"
