@@ -2,6 +2,6 @@
 from django.apps import AppConfig
 
 
-class TestAppConfig(AppConfig):
+class PaymentPageConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "src.test_app"
+    name = "payment_page"

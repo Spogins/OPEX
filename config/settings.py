@@ -67,7 +67,6 @@ WAGTAIL_APPS = [
 
 LOCAL_APPS = [
     "src.base",
-    "src.test_app",
     "src.tinymce_editor",
     "src.wagtailvideos",
 ]
