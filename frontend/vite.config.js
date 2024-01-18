@@ -26,12 +26,11 @@ export default {
         assetsDir: '',
         manifest: true,
         emptyOutDir: true,
-        target: 'es2022',
+        target: 'es2015',
         rollupOptions: {
             input: {
-                main: resolve(__dirname, 'src/js/scripts.min.js'),
-                common: resolve(__dirname, 'src/js/common.js'),
-                mainCss: resolve(__dirname, 'src/css/main.min.css'),
+                main: resolve(__dirname, 'js/main.js'),
+
 
 
             },
