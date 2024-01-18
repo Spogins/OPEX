@@ -30,6 +30,9 @@ export default {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'js/main.js'),
+
+
+
             },
             output: {
                 entryFileNames: `src/[name].[hash].js`,
