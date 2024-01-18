@@ -1,35 +1,20 @@
 {
-    "name": "clean-html-sass-gulp",
-    "version": "1.0.0",
-    "description": "Start HTML Template",
-    "main": "index.js",
-    "scripts": {
-        "dev": "vite",
-        "watch": "vite build --watch & vite && fg",
-        "watch_windows": "vite build --watch",
-        "build": "vite build",
-        "preview": "vite preview"
-    },
-    "author": "Nikolay Chireev",
-    "license": "ISC",
-    "devDependencies": {
-        "vite": "^4.4.5",
-        "browser-sync": "^2.26.7",
-        "del": "^5.0.0",
-        "gulp": "^4.0.2",
-        "gulp-autoprefixer": "^6.1.0",
-        "gulp-clean-css": "^4.2.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-image-resize": "^0.13.0",
-        "gulp-imagemin": "^6.0.0",
-        "gulp-notify": "^3.2.0",
-        "gulp-rename": "^1.4.0",
-        "gulp-rsync": "0.0.8",
-        "gulp-sass": "^4.0.2",
-        "gulp-uglify": "^3.0.2",
-        "gulp-util": "^3.0.8"
-    },
-    "dependencies": {
-        "sticky-sidebar": "^3.3.1"
-    }
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "watch": "vite build --watch & vite && fg",
+    "watch_windows": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5",
+    "sass": "^1.66.0"
+  },
+  "dependencies": {
+    "scroll-lock": "^2.1.5"
+  }
 }
