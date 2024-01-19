@@ -29,10 +29,9 @@ export default {
         target: 'es2015',
         rollupOptions: {
             input: {
-                main: resolve(__dirname, 'js/main.js'),
-
-
-
+                scripts: resolve(__dirname, 'js/scripts.js'),
+                common: resolve(__dirname, 'js/common.js'),
+                mainCss: resolve(__dirname, 'css/main.min.css'),
             },
             output: {
                 entryFileNames: `src/[name].[hash].js`,
