@@ -35,3 +35,39 @@ class ContactSetting(BaseSiteSetting):
         FieldPanel("instagram"),
         FieldPanel("youtube"),
     ]
+
+
+@register_setting
+class FooterSetting(BaseSiteSetting):
+    title = models.CharField(max_length=50)
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
+    panels = [
+        FieldPanel("title"),
+        FieldPanel("logo"),
+    ]
+
+
+@register_setting
+class HeaderSetting(BaseSiteSetting):
+    title = models.CharField(max_length=50)
+    header_discount = models.CharField(max_length=150, blank=True)
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
+    panels = [
+        FieldPanel("title"),
+        FieldPanel("header_discount"),
+        FieldPanel("logo"),
+    ]
