@@ -9,13 +9,6 @@ class ItemDescription(StructBlock):
     icon = ImageChooserBlock()
 
 
-# class TabItemDescriptionBlock(StreamBlock):
-#     description = ItemDescription()
-#
-#     class Meta:
-#         max_num = 3
-
-
 class TabBlock(StructBlock):
     title = CharBlock()
     subtitle = CharBlock()
@@ -27,4 +20,5 @@ class ThreeTabBlock(StreamBlock):
     tab = TabBlock()
 
     class Meta:
+        template = ("three_tab_block/three_tab_block.html",)
         max_num = 3

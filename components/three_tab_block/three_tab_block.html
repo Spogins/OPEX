@@ -1,0 +1,84 @@
+{% load wagtailimages_tags %}
+{% with value as tab_list %}
+    <section class="payment">
+        <div class="tabs">
+            <div class="tabs__wrap">
+                <div class="container">
+                    <div class="row">
+                        <ul class="tabs__caption">
+                            {% for tab in tab_list %}
+                                {% if forloop.counter0 == 0 %}
+                                    <li class="active"><i class="nut-icon icons-vector12"></i>
+                                        <span>{{ tab.value.title }}</span></li>
+                                {% else %}
+                                    <li><i class="nut-icon icons-vector12"></i> <span>{{ tab.value.title }}</span></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        {% for tab in tab_list %}
+                            {% if forloop.counter0 == 0 %}
+                                <div class="tabs__content active">
+                                    <div class="row">
+                                        <div class="col-md-5 col-12 align-self-center">
+                                            <div class="tabs__content_block">
+                                                <p class="tabs__content_title">
+                                                    {{ tab.value.subtitle }}
+                                                </p>
+                                                <ul>
+                                                    {% for tab_item_description in tab.value.tab_item_description  %}
+                                                    <li>
+                                                        {% image tab_item_description.icon original as tab_icon %}
+                                                        <span><img src="{{ tab_icon.url }}"
+                                                                   alt="alt">{{ tab_item_description.title }}</span>
+                                                        <p>{{ tab_item_description.description }}</p>
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 col-12">
+                                            {% image tab.value.image width-770 height-471 as tab_image %}
+                                            <img src="{{ tab_image.url }}" class="tabs__content_img" alt="alt">
+                                        </div>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="tabs__content">
+                                    <div class="row">
+                                        <div class="col-md-5 col-12 align-self-center">
+                                            <div class="tabs__content_block">
+                                                <p class="tabs__content_title">
+                                                    {{ tab.value.subtitle }}
+                                                </p>
+                                                <ul>
+                                                    {% for tab_item_description in tab.value.tab_item_description  %}
+                                                    <li>
+                                                        {% image tab_item_description.icon original as tab_icon %}
+                                                        <span><img src="{{ tab_icon.url }}"
+                                                                   alt="alt">{{ tab_item_description.title }}</span>
+                                                        <p>{{ tab_item_description.description }}</p>
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 col-12">
+                                            {% image tab.value.image width-770 height-471 as tab_image %}
+                                            <img src="{{ tab_image.url }}" class="tabs__content_img" alt="alt">
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endwith %}

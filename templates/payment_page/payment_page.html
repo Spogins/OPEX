@@ -1,12 +1,38 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags base_tags django_vite %}
+{% load static wagtailcore_tags base_tags django_vite wagtailimages_tags i18n %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% get_static_path "css/main.min.css" %}">
 {% endblock %}
 {% block content %}
+    {% image page.image original as banner_photo %}
+    <section class="first-section overlay" style="background-image: url({{ banner_photo.url }})">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li>
+                        <a href="/">Главная</a>
+                    </li>
+                    <li>
+                        Оплата и доставка
+                    </li>
+                </ul>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <h1>{{ page.title }}</h1>
+            </div>
+        </div>
+    </section>
+
+    {% for block in page.body %}
+        {% if block.block_type == 'tab_block' %}
+            {% include_block block %}
+        {% endif %}
+        {% if block.block_type == 'units_block' %}
+            {% include_block block %}
+        {% endif %}
+    {% endfor %}
 {% endblock %}
 
 {% block extra_js %}
     {% vite_asset "js/scripts.js" %}
-{#    <script src="{% get_static_path "js/scripts.min.js" %}"></script>#}
 {% endblock %}
