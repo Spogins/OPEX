@@ -1,0 +1,27 @@
+{% load base_tags %}
+{% with value as unit_items %}
+    <h1 style="color: black"></h1>
+    <section class="timer gray_section">
+        <div class="container">
+
+            <div class="row">
+                    {% for unit_item in unit_items %}
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="wrap">
+                        <span class="timer__single" data-from="1" data-to="{{ unit_item.value.value }}"
+                              data-speed="2500"
+                              data-refresh-interval="50"></span>
+                            <sup>{{ unit_item.value.measure_unit }}</sup>
+                            <div class="timer__descr">
+                                {% with unit_item.value.title|split_half:" " as title_list %}
+                                    <div>{{ title_list.0 }}</div>
+                                    {{ title_list.1 }}
+                                {% endwith %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endwith %}

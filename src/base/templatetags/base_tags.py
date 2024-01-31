@@ -31,7 +31,22 @@ def split(value, key):
     """
     Returns the value turned into a list.
     """
+    print(value.split(key))
+
     return value.split(key)
+
+
+@register.filter(name="split_half")
+def split_half(value, key):
+    """
+    Returns the two part of string
+    """
+    original_list = value.split(key)
+    middle_index = len(original_list) // 2
+    first_part = " ".join(original_list[:middle_index])
+    second_part = " ".join(original_list[middle_index:])
+
+    return first_part, second_part
 
 
 # tag for convert youtube url with embed
