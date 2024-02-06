@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags base_tags django_vite wagtailimages_tags i18n %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% get_static_path "css/main.min.css" %}">
+{% endblock %}
+{% block content %}
+    {% image page.image original as banner_photo %}
+    <section class="first-section overlay" style="background-image: url({{ banner_photo.url }})">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<a href="{% if page.video %}{{ page.video.url }}{% endif %}">
+					<h1>{{ page.title }}</h1>
+					<p>{{ page.subtitle }}</p>
+					{% if page.video.url %}
+                        <span><i class="nut-icon icons-play-icon"></i></span>
+                    {% endif %}
+				</a>
+			</div>
+		</div>
+	</section>
+
+    {% for block in page.body %}
+        {% include_block block %}
+    {% endfor %}
+{% endblock %}
+
+{% block extra_js %}
+    {% vite_asset "js/scripts.js" %}
+{% endblock %}

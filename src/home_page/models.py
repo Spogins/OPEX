@@ -4,12 +4,13 @@ from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
 
-from components.three_tab_block.three_tab_block import ThreeTabBlock
+from components.benefits_block.benefits_block import BenefitsBlock
+from components.text_with_gallery_block.text_with_gallery_block import TextWithGalleryBlock
 from components.units_block.units_block import UnitsBlock
 from components.video_image_chooser_block.video_image_chooser_block import VideoImageChooserBlock
 
 
-class PaymentPage(Page):
+class HomePage(Page):
     subtitle = models.CharField(max_length=255)
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -17,12 +18,13 @@ class PaymentPage(Page):
         on_delete=models.SET_NULL,
         related_name="+",
     )
-    video = models.ForeignKey("wagtailvideos.Video", related_name="+", null=True, blank=True, on_delete=models.SET_NULL)
+    video = models.ForeignKey("wagtailvideos.Video", related_name="+", blank=True, null=True, on_delete=models.SET_NULL)
     body = StreamField(
         [
-            ("tab_block", ThreeTabBlock()),
             ("units_block", UnitsBlock()),
+            ("text_with_gallery_block", TextWithGalleryBlock()),
             ("video_image_chooser_block", VideoImageChooserBlock()),
+            ("benefits_block", BenefitsBlock()),
         ],
         use_json_field=True,
     )
