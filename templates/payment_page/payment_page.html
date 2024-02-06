@@ -30,6 +30,9 @@
         {% if block.block_type == 'units_block' %}
             {% include_block block %}
         {% endif %}
+        {% if block.block_type == 'video_image_chooser_block' %}
+            {% include_block block %}
+        {% endif %}
     {% endfor %}
 {% endblock %}
 
