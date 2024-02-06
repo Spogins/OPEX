@@ -6,6 +6,7 @@ from wagtail.models import Page
 
 from components.three_tab_block.three_tab_block import ThreeTabBlock
 from components.units_block.units_block import UnitsBlock
+from components.video_image_chooser_block.video_image_chooser_block import VideoImageChooserBlock
 
 
 class PaymentPage(Page):
@@ -22,6 +23,7 @@ class PaymentPage(Page):
         [
             ("tab_block", ThreeTabBlock()),
             ("units_block", UnitsBlock()),
+            ("video_image_chooser_block", VideoImageChooserBlock()),
         ],
         use_json_field=True,
     )

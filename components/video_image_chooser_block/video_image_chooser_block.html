@@ -1,0 +1,36 @@
+{% load wagtailimages_tags %}
+{% with value as block %}
+    {% if block.video.url %}
+        <div class="parallax" data-scrollax-parent="true">
+            {% image block.image original as preview_image %}
+            <section class="goal overlay cover" style="background-image: url({{ preview_image.url }})"
+                     data-scrollax="properties: { translateY: '30%' }">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <a href="{{ block.video.url }}"
+                           data-scrollax="properties: { 'translateY': '5%', 'opacity': 1 }">
+                            <h2>{{ block.title }}</h2>
+                            <span><i class="nut-icon icons-play-icon"></i></span>
+                            <p><i>{{ block.subtitle }}</i></p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    {% else %}
+        <div class="parallax" data-scrollax-parent="true">
+        {% image block.image original as image %}
+			<section class="eco overlay" style="background-image: url({{ image.url }})" data-scrollax="properties: { translateY: '30%' }">
+				<div class="container">
+					<div class="row align-items-center justify-content-center">
+						<a href="#" data-scrollax="properties: { 'translateY': '5%', 'opacity': 1 }">
+							<i class="nut-icon icons-eco"></i>
+							<h2>Эко продукция</h2>
+							<p>Выращиваем каждое деревцо с любовью, на экологически<br> чистой земле, без использования пестицидов и химии</p>
+						</a>
+					</div>
+				</div>
+			</section>
+		</div>
+    {% endif %}
+{% endwith %}
