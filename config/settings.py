@@ -72,6 +72,7 @@ LOCAL_APPS = [
     "src.wagtailvideos",
     "src.payment_page",
     "src.contact_settings",
+    "src.home_page",
 ]
 
 THIRD_PARTY_APPS = [
@@ -193,11 +194,7 @@ DJANGO_VITE_MANIFEST_PATH = DJANGO_VITE_ASSETS_PATH / "nodejs/manifest.json"
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 
-STATICFILES_DIRS = [
-    BASE_DIR / "components",
-    BASE_DIR / "static",
-    DJANGO_VITE_ASSETS_PATH
-]
+STATICFILES_DIRS = [BASE_DIR / "components", BASE_DIR / "static", DJANGO_VITE_ASSETS_PATH]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "collect_static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

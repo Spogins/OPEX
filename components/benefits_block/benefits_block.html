@@ -1,0 +1,57 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+{% with value as block %}
+<section class="benefit">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-12">
+					<h2>{{ block.title }}</h2>
+					<p>{{ block.subtitle }}</p>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-6	col-12">
+					<div class="wrap">
+                        {% image block.benefit_1.image original as image_1 %}
+						<div class="benefit__item overlay" style="background-image: url({{ image_1.url }})">
+							<i class="nut-icon icons-group4"></i>
+							<h3>{{ block.benefit_1.title }}</h3>
+						</div>
+						<div class="benefit__item item_hover overlay_green">
+							<i class="nut-icon icons-group4"></i>
+							<h3>{{ block.benefit_1.title }}</h3>
+							{{ block.benefit_1.description|richtext }}
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6	col-12">
+					<div class="wrap">
+                        {% image block.benefit_2.image original as image_2 %}
+						<div class="benefit__item overlay" style="background-image: url({{ image_2.url }})">
+							<i class="nut-icon icons-vector4"></i>
+							<h3>{{ block.benefit_2.title }}</h3>
+						</div>
+						<div class="benefit__item item_hover overlay_green">
+							<i class="nut-icon icons-vector4"></i>
+							<h3>{{ block.benefit_2.title }}</h3>
+							{{ block.benefit_2.description|richtext }}
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6	col-12">
+					<div class="wrap">
+                        {% image block.benefit_3.image original as image_3 %}
+						<div class="benefit__item overlay" style="background-image: url({{ image_3.url }})">
+							<i class="nut-icon icons-group5"></i>
+							<h3>{{ block.benefit_3.title }}</h3>
+						</div>
+						<div class="benefit__item item_hover overlay_green">
+							<i class="nut-icon icons-group5"></i>
+							<h3>{{ block.benefit_3.title }}</h3>
+							{{ block.benefit_3.description|richtext }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endwith %}
