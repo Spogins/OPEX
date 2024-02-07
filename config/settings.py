@@ -73,6 +73,7 @@ LOCAL_APPS = [
     "src.payment_page",
     "src.contact_settings",
     "src.home_page",
+    "src.gallery_page",
 ]
 
 THIRD_PARTY_APPS = [
