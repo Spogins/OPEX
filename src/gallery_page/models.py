@@ -17,16 +17,23 @@ class GalleryPage(Page):
         related_name="+",
     )
     video = models.ForeignKey("wagtailvideos.Video", related_name="+", blank=True, null=True, on_delete=models.SET_NULL)
+    gallery_title = models.CharField(max_length=255)
+    gallery_subtitle = models.CharField(max_length=255)
     body = StreamField(
         [
-            ("gallery", ListBlock(VideoImageChooserBlock())),
+            ("gallery", ListBlock(VideoImageChooserBlock(), template="base/gallery_list.html")),
         ],
+        block_counts={
+            "gallery": {"min_num": 1, "max_num": 1},
+        },
         use_json_field=True,
     )
     content_panels = Page.content_panels + [
         FieldPanel("subtitle"),
         FieldPanel("image"),
         FieldPanel("video"),
+        FieldPanel("gallery_title"),
+        FieldPanel("gallery_subtitle"),
         FieldPanel("body"),
     ]
     promote_panels = [
