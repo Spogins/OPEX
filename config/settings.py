@@ -63,6 +63,7 @@ WAGTAIL_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail.contrib.settings",
+    "wagtailseo",
     "wagtail",
 ]
 
