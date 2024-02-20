@@ -79,6 +79,7 @@ LOCAL_APPS = [
     "src.home_page",
     "src.gallery_page",
     "src.privacy_policy_page",
+    "src.users",
 ]
 
 THIRD_PARTY_APPS = [
@@ -216,3 +217,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 WAGTAIL_SITE_NAME = "My Example Site"
 WAGTAILADMIN_BASE_URL = "http://example.com"
+
+AUTH_USER_MODEL = "users.CustomUser"
