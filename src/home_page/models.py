@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
+from wagtailseo.models import SeoMixin
 
 from components.benefits_block.benefits_block import BenefitsBlock
 from components.text_with_gallery_block.text_with_gallery_block import TextWithGalleryBlock
 from components.units_block.units_block import UnitsBlock
 from components.video_image_chooser_block.video_image_chooser_block import VideoImageChooserBlock
+from src.base.panels import SeoCustomPanel
 
 
-class HomePage(Page):
+class HomePage(SeoMixin, Page):
     subtitle = models.CharField(max_length=255)
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -34,6 +36,4 @@ class HomePage(Page):
         FieldPanel("video"),
         FieldPanel("body"),
     ]
-    promote_panels = [
-        MultiFieldPanel(Page.promote_panels, "Common page configuration"),
-    ]
+    promote_panels = SeoCustomPanel.seo_meta_panels

@@ -852,6 +852,19 @@ django-modeltranslation = ">=0.17"
 wagtail = ">=4.0,<=6.0"
 
 [[package]]
+name = "wagtail-seo"
+version = "2.5.0"
+description = "Search engine and social media optimization for Wagtail."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "wagtail_seo-2.5.0-py3-none-any.whl", hash = "sha256:07b1bec067fcf881ade65d36d5096b00b2304e91602fd5a4bc0ad50177fe4fb9"},
+]
+
+[package.dependencies]
+wagtail = ">=3.0,<7.0"
+
+[[package]]
 name = "wagtailvideos"
 version = "5.2.1"
 description = "A wagtail module for uploading and displaying videos in various codecs."
@@ -909,4 +922,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "8c2813bfce7c9f28ed2aff8e36346685e70eba9ac39f82a4a75cc75c38e4c231"
+content-hash = "004c05f3cb5d8990d5d38a450a1cafa4aae36a6dd4751cff600d94ba3976d1a2"
