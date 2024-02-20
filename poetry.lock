@@ -836,6 +836,24 @@ docs = ["Sphinx (>=1.5.2)", "myst-parser (==0.18.1)", "pyenchant (>=3.1.1,<4)", 
 testing = ["Jinja2 (>=3.0,<3.2)", "azure-mgmt-cdn (>=12.0,<13.0)", "azure-mgmt-frontdoor (>=1.0,<1.1)", "black (==22.3.0)", "boto3 (>=1.28,<2)", "coverage (>=3.7.0)", "curlylint (==0.13.1)", "django-pattern-library (>=0.7,<0.8)", "djhtml (==1.5.2)", "doc8 (==0.8.1)", "factory-boy (>=3.2)", "freezegun (>=0.3.8)", "polib (>=1.1,<2.0)", "python-dateutil (>=2.7)", "pytz (>=2014.7)", "ruff (==0.0.290)", "semgrep (==1.40.0)", "tblib (>=2.0,<3.0)"]
 
 [[package]]
+name = "wagtail-modeladmin"
+version = "2.0.0"
+description = "Add any model in your project to the Wagtail admin. Formerly wagtail.contrib.modeladmin."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "wagtail_modeladmin-2.0.0-py3-none-any.whl", hash = "sha256:36931ce4b2c2bb56d0367317b29786eb001344b7c9a1cd4f719d7f11efeae71b"},
+    {file = "wagtail_modeladmin-2.0.0.tar.gz", hash = "sha256:3794c854b86d69ad1b2ec4f3ee5e6852ff8cb0505bd9151186ef26e0a88d84bc"},
+]
+
+[package.dependencies]
+Wagtail = ">=5.2"
+
+[package.extras]
+docs = ["Sphinx (>=6.0)", "myst_parser (>=0.18.1,<1.0)", "pyenchant (>=3.1.1,<4)", "sphinx-autobuild (>=0.6.0)", "sphinx-wagtail-theme (==6.2.0)", "sphinx_copybutton (>=0.5)", "sphinxcontrib-spelling (>=8.0,<9.0)"]
+testing = ["dj-database-url (>=2.0.0)", "pre-commit (<3.0)"]
+
+[[package]]
 name = "wagtail-modeltranslation"
 version = "0.14.1"
 description = "Translates Wagtail CMS models using a registration approach."
@@ -935,4 +953,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f85677a19e9cac692b43dc187872391db7e45b931805085cc1a98a88ed3c280b"
+content-hash = "e63453abe39ee76c6e0a58e0dd97fc8970b072357f915d5535f84178f8718d31"
