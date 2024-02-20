@@ -34,7 +34,8 @@ SECRET_KEY = env.str("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", default=True)
-
+# For disabled notification about update wagtail
+WAGTAIL_ENABLE_UPDATE_CHECK = False
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -62,9 +63,11 @@ WAGTAIL_APPS = [
     "wagtail.images",
     "wagtail.search",
     "wagtail.admin",
+    "wagtail.contrib.modeladmin",
     "wagtail.contrib.settings",
     "wagtailseo",
     "wagtail",
+    "robots",
 ]
 
 LOCAL_APPS = [
@@ -122,7 +125,6 @@ TEMPLATES = [
                     [
                         "django.template.loaders.filesystem.Loader",
                         "django.template.loaders.app_directories.Loader",
-                        # 'django_components.template_loader.Loader',
                     ],
                 ),
             ],

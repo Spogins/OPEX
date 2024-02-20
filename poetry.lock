@@ -852,6 +852,19 @@ django-modeltranslation = ">=0.17"
 wagtail = ">=4.0,<=6.0"
 
 [[package]]
+name = "wagtail-robots"
+version = "0.4.0"
+description = "Robots.txt exclusion for Wagtail, complementing Sitemaps."
+optional = false
+python-versions = "*"
+files = [
+    {file = "wagtail-robots-0.4.0.tar.gz", hash = "sha256:7ba56f4b785a7bc4229cb15986e012956207bc61e0c4e6f47452016b72166d31"},
+]
+
+[package.dependencies]
+wagtail = ">=2.15"
+
+[[package]]
 name = "wagtail-seo"
 version = "2.5.0"
 description = "Search engine and social media optimization for Wagtail."
@@ -922,4 +935,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "004c05f3cb5d8990d5d38a450a1cafa4aae36a6dd4751cff600d94ba3976d1a2"
+content-hash = "f85677a19e9cac692b43dc187872391db7e45b931805085cc1a98a88ed3c280b"
