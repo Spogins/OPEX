@@ -15,6 +15,7 @@ django-vite = "^3.0.2"
 wagtail-modeltranslation = "^0.14.1"
 wagtailvideos = "^5.2.1"
 wagtail-seo = "^2.5.0"
+wagtail-robots = "^0.4.0"
 
 
 [build-system]
