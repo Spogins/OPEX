@@ -50,6 +50,7 @@ DJANGO_APPS = [
 ]
 
 WAGTAIL_APPS = [
+    "robots",
     "wagtail_modeltranslation",
     "wagtail_modeltranslation.makemigrations",
     "wagtail_modeltranslation.migrate",
@@ -63,11 +64,10 @@ WAGTAIL_APPS = [
     "wagtail.images",
     "wagtail.search",
     "wagtail.admin",
-    "wagtail.contrib.modeladmin",
     "wagtail.contrib.settings",
     "wagtailseo",
     "wagtail",
-    "robots",
+    "wagtail_modeladmin",
 ]
 
 LOCAL_APPS = [
@@ -78,6 +78,7 @@ LOCAL_APPS = [
     "src.contact_settings",
     "src.home_page",
     "src.gallery_page",
+    "src.privacy_policy_page",
 ]
 
 THIRD_PARTY_APPS = [

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags base_tags django_vite wagtailimages_tags i18n %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% get_static_path "css/main.min.css" %}">
+{% endblock %}
+{% block body_class %}page{% endblock %}
+{% block content %}
+    <section class="first-section no-bg">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ul>
+					<li>
+						<a href="/">Главная</a>
+					</li>
+					<li>
+						<a href="#">Регистрация</a>
+					</li>
+					<li>
+							Пользовательское соглашение
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+    <section class="term">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					{{ page.description|richtext }}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block extra_js %}
+    {% vite_asset "js/scripts.js" %}
+{% endblock %}

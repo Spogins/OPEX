@@ -27,7 +27,7 @@
     {% block extra_css %}
     {% endblock %}
 </head>
-<body class="page inside">
+<body class="{% block body_class %}page inside{% endblock %}">
 {% block header %}
     {% include "header.html" %}
 {% endblock %}
