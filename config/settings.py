@@ -80,6 +80,7 @@ LOCAL_APPS = [
     "src.gallery_page",
     "src.privacy_policy_page",
     "src.users",
+
 ]
 
 THIRD_PARTY_APPS = [
