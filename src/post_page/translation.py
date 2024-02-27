@@ -8,4 +8,4 @@ from src.privacy_policy_page.models import PrivacyPolicyPage
 
 @register(PostPage)
 class PostPageTranslation(TranslationOptions):
-    fields = ("description",)
+    fields = ("main_title",)

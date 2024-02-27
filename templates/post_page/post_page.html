@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags base_tags django_vite wagtailimages_tags i18n %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% get_static_path "css/main.min.css" %}">
+{% endblock %}
+{% block content %}
+
+	<section class="benefit-news">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-12">
+					<h1>Новости и статьи</h1>
+					<p>Свежие новости и полезная информация</p>
+				</div>
+			</div>
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-8 py-4">
+					<div class="benefit-news__img">
+						<img src="img/pic2.jpg" alt="alt">
+					</div>
+				</div>
+				<div class="col-lg-4 py-4">
+					<div class="news__item">
+						<div class="wraper">
+							<div class="item_data">
+								12.04.2019
+							</div>
+							<h3>Центр поддержки экспорта, в студии Павел Тулба</h3>
+							<p>Сельскохозяйственный обслуживающий кооператив “Орех Причерноморья” предлагает своим клиентам выгодные условия сотрудничества.</p>
+							<p>Ореховый бизнес – один из наиболее перспективных в Украине. Ежегодная нехватка продукта в Европе составляет 100 000 тонн. У Вас есть возможность зарабатывать десятки тысяч долларов в год всего на нескольких гектарах земли.</p>
+							<a href="#">Читать <i class="nut-icon icons-read-more"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6	col-12 py-4">
+					<div class="news__item">
+						<span class="video_wrap">
+							<img src="img/pic.jpg" alt="alt">
+						</span>
+						<div class="wraper pr-5">
+							<div class="item_data">
+								12.04.2019
+							</div>
+							<h3>Центр поддержки экспорта, в студии Павел Тулба</h3>
+							<p>Как уже упоминал Павел Тулба, шиповник цветёт. Эта культура очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и отличную...</p>
+							<a href="#">Читать <i class="nut-icon icons-read-more"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6	col-12 py-4">
+					<div class="news__item">
+						<span class="video_wrap">
+							<img src="img/pic3.jpg" alt="alt">
+						</span>
+						<div class="wraper pr-5">
+							<div class="item_data">
+								12.04.2019
+							</div>
+							<h3>В Одесской области состоялся масштабный торгово - экспортный форум</h3>
+							<p>Как уже упоминал Павел Тулба, шиповник цветёт. Эта культура очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и отличную...</p>
+							<a href="#">Читать <i class="nut-icon icons-read-more"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6	col-12 py-4">
+					<div class="news__item news__item_video">
+						<span class="video_wrap">
+							<img src="img/pic4.jpg" alt="alt">
+						</span>
+						<div class="wraper pr-5">
+							<div class="item_data">
+								12.04.2019
+							</div>
+							<h3>Сертификация органического производителя</h3>
+							<p>Как уже упоминал Павел Тулба, шиповник цветёт. Эта культура очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и отличную...</p>
+							<a href="#">Читать <i class="nut-icon icons-read-more"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12	col-12 py-4">
+					<div class="wrap">
+						<a href="#" class="benefit-news__item overlay benefit-news__item_video_text" style="background-image: url(img/peoples.jpg)">
+								<span>
+									<i class="nut-icon icons-play-icon"></i>
+								</span>
+								<h3>Проект UBHDP</h3>
+								<p>Вчера к нам приезжал американский агроном Рон, спасибо Мельнику<br> Евгению и проекту <strong>UBHDP</strong> за возможность получить консультацию<br> от мировых специалистов!</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="wrapper">
+					<a href="#" class="button button_transparent">Посмотреть еще</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block extra_js %}
+    {% vite_asset "js/scripts.js" %}
+{% endblock %}
